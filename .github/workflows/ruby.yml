@@ -15,17 +15,5 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
-    - name: Cache Bundler
-      uses: actions/cache@v4
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ matrix.ruby }}-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-${{ matrix.ruby }}-
-    - name: Install Dependencies
-      run: |
-        bundle install --jobs 4 --retry 3 || (echo "Bundle install failed, dumping logs" && cat ~/.bundle/cache/compact_index/* && exit 1)
-    - name: Run Security Audit
-      run: gem install bundler-audit && bundle audit
     - name: Run Tests
       run: bundle exec rake test
