@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "memoar"
   spec.version = Memoar::VERSION
   spec.authors = ["Stoyan Nikolov"]
-  spec.email = ["s.nikolov@clock-hs.com"]
+  spec.email = ["s.nikolov@roomspilot.com"]
 
   spec.summary = "A simple versioning gem for ActiveRecord models using a JSON column."
   spec.description = "Memoar tracks changes on specified model fields and stores them in a serialized text column."
@@ -21,6 +21,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", ">= 6.0"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "sqlite3", "~> 1.4"
+  spec.add_development_dependency "minitest", "~> 5.16"
+  spec.add_development_dependency "minitest-rails", "~> 6.1"
+  spec.add_development_dependency "bundler", "~> 2.0"
+  spec.add_development_dependency "rake", "~> 13.0"
 end

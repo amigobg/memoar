@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "memoar/version"
+require "memoar/version"
+require "memoar/tracker"
 
 module Memoar
   class Error < StandardError; end
-  
-  mattr_accessor :current_user_id
+end
+
+ActiveSupport.on_load(:active_record) do
+  include Memoar::Tracker
 end

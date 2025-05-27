@@ -1,24 +1,47 @@
 # Memoar
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/memoar`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to memoar! A simple versioning gem for ActiveRecord models using a JSON column.
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add this line to your application's Gemfile:
 
 ```bash
-bundle add memoar
+gem 'memoar'
+
 ```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+And then execute:
+
+```bash
+bundle install
+
+```
+
+Or install it yourself as:
 
 ```bash
 gem install memoar
+
 ```
 
 ## Usage
+
+1.Generate a migration to add the version_log column to your model:
+
+```bash
+rails generate memoar:install ModelName
+
+```
+
+2.Run the migration:
+
+```bash
+rails db:migrate
+
+```
+
+3.In your ActiveRecord model, specify fields to track:
 
 ```bash
 class Article < ApplicationRecord
@@ -27,7 +50,7 @@ end
 
 ```
 ```bash
-article.version_log
+article.previous_versions
 ```
 
 ## Contributing

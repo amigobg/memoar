@@ -3,11 +3,24 @@
 require "test_helper"
 
 class TestMemoar < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::Memoar::VERSION
+  def setup
+    User.create(name: "John Doe", email: "john@example.com")
+    @user = User.last
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_tracks_changes_to_user_fields
+    refute_nil ::Memoar::VERSION
+    assert_equal(["name", "email"], User.version_tracked_fields)
+    versions = @user.previous_versions
+    assert_equal(0, versions.size)
+    assert_equal("John Doe", @user.name)
+
+    @user.update!(name: "Jane Doe")
+    versions = @user.previous_versions
+    assert_equal("Jane Doe", @user.name)
+    assert_equal(1, versions.size)
+    
+    version = versions.first
+    assert_equal({"name" => ["John Doe", "Jane Doe"]}, version["changes"])
   end
 end
