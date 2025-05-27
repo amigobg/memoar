@@ -8,47 +8,42 @@ Add this line to your application's Gemfile:
 
 ```bash
 gem 'memoar'
-
 ```
 
 And then execute:
 
 ```bash
 bundle install
-
 ```
 
 Or install it yourself as:
 
 ```bash
 gem install memoar
-
 ```
 
 ## Usage
 
-1.Generate a migration to add the version_log column to your model:
+1. Generate a migration to add the version_log column to your model:
 
 ```bash
 rails generate memoar:install ModelName
-
 ```
 
-2.Run the migration:
+2. Run the migration:
 
 ```bash
 rails db:migrate
-
 ```
 
-3.In your ActiveRecord model, specify fields to track:
+3. In your ActiveRecord model, specify fields to track:
 
 ```bash
 class Article < ApplicationRecord
   track_changes_to :title, :content
 end
-
 ```
+
 ```bash
 article.previous_versions
 ```
