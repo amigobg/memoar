@@ -17,7 +17,15 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/amigobg/memoar"
-  spec.files         = Dir["lib/**/*", "README.md", "LICENSE", "Rakefile"]
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    Dir[
+      "lib/**/*.rb",
+      "README.md",
+      "LICENSE*",
+      "Rakefile",
+      "test/**/*.rb"
+    ]
+  end
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", ">= 6.0"
