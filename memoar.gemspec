@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/amigobg/memoar"
   spec.metadata = {
     "source_code_uri" => "https://github.com/amigobg/memoar",
-    "changelog_uri"   => "https://github.com/amigobg/memoar/blob/main/CHANGELOG.md"
+    "changelog_uri"   => "https://github.com/amigobg/memoar/blob/master/CHANGELOG.md"
   }
 
   spec.license = "MIT"

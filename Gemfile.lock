@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    memoar (0.1.0)
+    memoar (0.1.1)
       rails (~> 6.0)
 
 GEM
