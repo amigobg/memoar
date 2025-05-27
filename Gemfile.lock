@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     memoar (0.1.0)
-      rails (>= 6.0)
+      rails (~> 6.0)
 
 GEM
   remote: https://rubygems.org/
