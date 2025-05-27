@@ -43,7 +43,7 @@ class Article < ApplicationRecord
   track_changes_to :title, :content
 end
 ```
-3.1 With limit of recorded changes (default 50):
+or with limit of recorded changes (default 50):
 
 ```bash
 class Article < ApplicationRecord

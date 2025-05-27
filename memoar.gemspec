@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["s.nikolov@roomspilot.com"]
 
   spec.summary = "A simple versioning gem for ActiveRecord models using a JSON column."
-  spec.description = "Memoar tracks changes on specified model fields and stores them in a serialized text column."
+  spec.description = "Memoar tracks changes on specified model fields and stores them in a JSON column."
 
   spec.homepage = "https://github.com/amigobg/memoar"
   spec.license = "MIT"

@@ -34,8 +34,8 @@ module Memoar
         history << version_entry
         history = history.last(self.class.version_log_limit)
 
-        self.version_log = history.to_json
-        save!
+        self[:version_log] = history.to_json
+        update_column(:version_log, self[:version_log])
       end
 
       class_methods do
