@@ -19,10 +19,11 @@ Gem::Specification.new do |spec|
 
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
-
+  
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir[
       "lib/**/*.rb",
+      "lib/**/*.erb",
       "README.md",
       "LICENSE*",
       "Rakefile",

@@ -1,4 +1,4 @@
-class AddVersionLogTo<%= table_name.camelize %> < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
+class AddVersionLogTo<%= class_name.pluralize %> < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
   def change
     add_column :<%= table_name %>, :version_log, :json, default: []
   end

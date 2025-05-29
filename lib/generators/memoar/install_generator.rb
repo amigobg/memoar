@@ -6,7 +6,7 @@ module Memoar
       source_root File.expand_path("templates", __dir__)
 
       def copy_migration
-        migration_template "add_version_log_to_model.rb.erb", "db/migrate/#{timestamp}_add_version_log_to_#{table_name}.rb"
+        migration_template "add_version_log_to_model.rb.erb", "db/migrate/add_version_log_to_#{table_name}.rb"
       end
 
       private
